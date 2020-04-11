@@ -179,6 +179,8 @@ def download_chromedriver(cwd=False):
             major_version
         )
     chromedriver_filename = get_chromedriver_filename()
+    if chromedriver_filename == 'chromedriver':
+        chromedriver_dir = '/usr/local/bin/'
     chromedriver_filepath = os.path.join(chromedriver_dir, chromedriver_filename)
     if not os.path.isfile(chromedriver_filepath) or \
             not check_version(chromedriver_filepath, chromedriver_version):
